@@ -1,0 +1,52 @@
+body {
+  display: -ms-flexbox;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  background-color: lightslategrey;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.showcase {
+  position: relative;
+}
+
+.showcase-box {
+  position: absolute;
+  /*border: 5px solid darkblue;*/
+  height: 200px;
+  width: 400px;
+  top: 200px;
+  left: 33%;
+  
+}
+
+.bg-image {
+  opacity: 0.4;
+  height: 100%;
+  width: 100%;
+}
+
+.bg-img-title {
+  position: absolute;
+  top: 50px;
+  left: 40%;
+  color: rgb(7, 7, 7);
+}
+
+.bg-img-quienesomos {
+  position: absolute;
+  top: 200px;
+  left: 50px;
+  
+}
+
+.bg-img-verproductos {
+  position: absolute;
+  top: 400px;
+  left: 38%;
+  color: brown;
+}

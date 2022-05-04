@@ -32,19 +32,18 @@ export const Instrumentos = () => {
                     <div style={{display: "flex", justifyContent:"center"}}>
                         <Tarjeta
                             key={instrumento.id}
-                            id={instrumento.id}
+                            id={String(instrumento.id)}
                             nombre={instrumento.instrumento}
                             imagen={instrumento.imagen}
-                            precio={instrumento.precio}
-                            cantidadVendida={instrumento.cantidadVendida}
+                            precio={String(instrumento.precio)}
+                            cantidadVendida={String(instrumento.cantidadVendida)}
                             costoEnvio={instrumento.costoEnvio}
                         />
                       </div>
                 ))}
                 
             </Container>
+            <br></br>
         </>
     )
-
-
 }

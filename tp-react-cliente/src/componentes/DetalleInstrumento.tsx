@@ -27,15 +27,15 @@ export const DetalleInstrumento = () => {
 
     const [instru, setInstrumentos] = useState<instrumento[]>([]); //tuve que hacerlo con un array, sino no funcionaba
     const getInstrumentosResto = async () => {
-      let datos:instrumento[] = await getInstrumentoXIdFecth(Number(id));
-      console.log(datos);
-      setInstrumentos(datos);
+        let datos: instrumento[] = await getInstrumentoXIdFecth(Number(id));
+        console.log(datos);
+        setInstrumentos(datos);
     }
-    
+
     useEffect(() => {
-      getInstrumentosResto();
+        getInstrumentosResto();
     }, []);
-    let imagen=instru[0]?.imagen? instru[0].imagen:'imageneshome.jpg'; //esta linea la tuve que poner porque me daba error, al iniciar la página con el array vacío no asigna el nombre de la imagen entonces la img sin ruta de foto rompe el programa
+    let imagen = instru[0]?.imagen ? instru[0].imagen : 'imageneshome.jpg'; //esta linea la tuve que poner porque me daba error, al iniciar la página con el array vacío no asigna el nombre de la imagen entonces la img sin ruta de foto rompe el programa
     return (
         <>
             <Navigation></Navigation>
@@ -43,13 +43,17 @@ export const DetalleInstrumento = () => {
                 <a href='/instrumentos'><h5>Volver</h5></a>
                 <Row className="justify-content-md-center mt-6 border" >
                     <Col sm={6}>
-                        
-                       <img style={{ width: "300px" }} src={require(`../assets/images/${imagen}`)} /> 
+                        {
+                            imagen.includes('http') ?
+                                <img style={{ width: "300px" }} src={(imagen)} />
+                                :
+                                <img style={{ width: "300px" }} src={require(`../assets/images/${imagen}`)} />
+                        }
 
-                        <p style={{ textAlign: "justify" }}>Descripción {instru[0]?.descripcion}</p>
+                        <p style={{ textAlign: "justify" }}>{instru[0]?.descripcion}</p>
                     </Col>
                     <Col sm={4}><br></br> <Row>{instru[0]?.cantidadVendida} vendidos</Row>
-                        <Row>  {instru[0]?.instrumento}</Row>
+                        <Row> {instru[0]?.instrumento}</Row>
                         <Row>${instru[0]?.precio} </Row>
                         <Row>{instru[0]?.marca}</Row>
                         <Row>{instru[0]?.modelo}</Row>

@@ -9,7 +9,8 @@ export const Navigation = () => {
                 <Navbar.Brand href="/home">Home</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="/instrumentos">Nuestros Productos</Nav.Link>
-                    <Nav.Link href="/Donde Estamos">Donde Estamos</Nav.Link>
+                    <Nav.Link href="/home/#ubicacion">Donde Estamos</Nav.Link>
+                    <Nav.Link href="/TablaInstrumentos">ABM Instrumento</Nav.Link>
                 </Nav>
                 
             </Navbar>
