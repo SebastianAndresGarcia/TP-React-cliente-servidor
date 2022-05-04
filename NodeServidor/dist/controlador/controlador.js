@@ -68,7 +68,7 @@ exports.crearInstrumento = crearInstrumento;
 const actualizarInstrumento = (req, res) => new Promise((resolve, reject) => {
     const { instrumento, marca, modelo, imagen, precio, costoEnvio, cantidadVendida, descripcion } = req.body;
     const id = parseInt(req.params.id);
-    var values = [instrumento, marca, modelo, imagen, precio, costoEnvio, cantidadVendida, descripcion];
+    var values = [instrumento, marca, modelo, imagen, precio, costoEnvio, cantidadVendida, descripcion, id];
     mysqldb_1.cxMysql.getConnection((err, connection) => {
         if (err) {
             console.error(err);
